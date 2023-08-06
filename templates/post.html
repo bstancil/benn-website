@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-08KTVGMPWD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-08KTVGMPWD');
+    </script>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@bennstancil" />
+    <meta name="twitter:title" content="{{title}}" />
+    <meta name="twitter:description" content="{{description}}" />
+    <meta name="twitter:image" content="{{image_url}}" />
+    
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:description" content="{{desription}}" />
+    <meta property="og:image" content="{{image_url}}" />
+
+    <link rel="icon" type="image/png" href="https://perishablepress.com/wp/wp-content/images/2021/favicon-standard.png"/>
+    <link rel="stylesheet" href="/static/post.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
+    
+    <title>{{title}}</title>
+  </head>
+  
+  <body>
+    <div class="container">
+      <a href="{{substack_url}}">
+        <div class="card" href="{{substack_url}}">
+          <div class="photo">
+            <img src="{{image}}" alt="{{title}}">
+          </div>
+          <div class="desc">
+            <h1 class="title">{{title}}</h1>
+            <p class="subtitle">{{description}}</p>
+          </div>
+        </div>
+      </a>
+      <p class="explainer"><a href="/twitter-interstitial">What is this?</a></p>
+    </div>
+  </body>
+</html>
+
