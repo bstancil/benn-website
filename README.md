@@ -60,3 +60,9 @@ From a local terminal:
 ```
 ssh -i "benn-master.pem" -L 8000:localhost:8000 ubuntu@ec2-35-94-28-233.us-west-2.compute.amazonaws.com
 ```
+
+## Making updates
+
+1. Push updates to Github.
+2. From `/benn-website` in EC2, run `git pull`.
+
