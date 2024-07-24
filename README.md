@@ -16,20 +16,15 @@ Here's how to deploy this thing:
 
 https://chatgpt.com/c/7a628905-e1e3-48b1-94b0-2feb451671d3
 
-## To log into EC2 instance
+## Setup
 
+This logs into the EC2 instance:
 ```
 chmod 400 benn-master.pem
 ssh -i "benn-master.pem" ubuntu@ec2-35-94-28-233.us-west-2.compute.amazonaws.com
 ```
 
-To log out:
-```
-exit
-```
-
-
-## Initialization
+This installs the updates, and clones this repo:
 ```
 sudo apt-get update
 sudo apt-get install python3-pip python3-dev nginx git
@@ -45,8 +40,23 @@ source venv/bin/activate
 ## From the virtual environment
 pip install -r requirements.txt
 pip install gunicorn
-gunicorn --bind 0.0.0.0:8000 wsgi:app
+```
 
-## From your terminal
+## Running a dev environment
+
+1. Log into EC2.
+2. Navigate to the benn-website directory.
+3. Activate the virtual environment.
+4. Run gunicorn.
+
+```
+ssh -i "benn-master.pem" ubuntu@ec2-35-94-28-233.us-west-2.compute.amazonaws.com
+cd /home/ubuntu/benn-website
+source venv/bin/activate
+gunicorn --bind 0.0.0.0:8000 wsgi:app
+```
+
+From a local terminal:
+```
 ssh -i "benn-master.pem" -L 8000:localhost:8000 ubuntu@ec2-35-94-28-233.us-west-2.compute.amazonaws.com
 ```
