@@ -1,0 +1,12 @@
+.DS_Store
+
+__pycache__/
+venv/
+
+benn-master.pem
+
+.ipynb_checkpoints
+.env
+.venv
+
+
