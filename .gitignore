@@ -4,6 +4,7 @@ __pycache__/
 venv/
 
 benn-master.pem
+dev.md
 
 .ipynb_checkpoints
 .env
