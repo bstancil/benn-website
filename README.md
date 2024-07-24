@@ -23,6 +23,11 @@ chmod 400 benn-master.pem
 ssh -i "benn-master.pem" ubuntu@ec2-35-94-28-233.us-west-2.compute.amazonaws.com
 ```
 
+To log out:
+```
+exit
+```
+
 
 ## Initialization
 ```
@@ -36,13 +41,12 @@ cd benn-website
 sudo apt-get install python3-venv
 python3 -m venv venv
 source venv/bin/activate
+
+## From the virtual environment
 pip install -r requirements.txt
-
 pip install gunicorn
-
-
-## THIS IS WHERE THINGS FAIL
-
 gunicorn --bind 0.0.0.0:8000 wsgi:app
 
+## From your terminal
+ssh -i "benn-master.pem" -L 8000:localhost:8000 ubuntu@ec2-35-94-28-233.us-west-2.compute.amazonaws.com
 ```
