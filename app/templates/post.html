@@ -36,10 +36,24 @@
           <div class="desc">
             <h1 class="title">{{title}}</h1>
             <p class="subtitle">{{description}}</p>
+            <div class="read-button">Read this post</div>
           </div>
         </div>
       </a>
       <p class="explainer"><a href="/twitter-interstitial">What is this?</a></p>
+
+      {% if related %}
+      <div class="related-posts">
+        <h3>Other recent posts</h3>
+        <ul class="related-list">
+          {% for post in related[:10] %}
+            {% if post.slug != dynamic_page %}
+            <li><a href="https://benn.substack.com/p/{{post.slug}}">{{post.title}}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
     </div>
   </body>
 </html>
