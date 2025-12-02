@@ -41,14 +41,11 @@ a:link, a:visited, a:active, a:hover { text-decoration: none; }
 }
 
 .read-button {
-	position: absolute;
-	right: 0;
-	top: 22px;
-	transform: translateY(-50%);
-	background: rgb(0, 255, 0, 0.3);
-	color: rgb(64, 64, 64);
+	display: inline-block;
+	background: white;
 	border: 1px solid rgb(210,210,210);
-	padding: 12px 20px;
+	color: rgb(64, 64, 64);
+	padding: 8px 16px;
 	border-radius: 5px;
 	font-size: 16px;
 	font-weight: 600;
@@ -56,8 +53,8 @@ a:link, a:visited, a:active, a:hover { text-decoration: none; }
 	transition: background-color 0.2s;
 }
 
-.read-button:hover {
-	background: rgb(0, 255, 0);
+.card:hover .read-button:hover {
+	background: rgb(210,210,210);
 }
 
 .explainer {
