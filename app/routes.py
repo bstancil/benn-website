@@ -13,14 +13,27 @@ def home():
 def twitter_interstitial():
     return render_template('twitter-interstitial.html')
 
+## Paraphrase stuff
+@app.route('/paraphrase')
+def paraphrase():
+    return render_template('paraphrase.html')
+
+@app.route('/tos')
+def tos():
+    return render_template('tos.html')
+
+@app.route('/pp')
+def pp():
+    return render_template('pp.html')
+
 @app.route('/p/<dynamic_page>')
 def dynamic_page(dynamic_page):
-    
+
     substack_url = f'https://benn.substack.com/p/{dynamic_page}'
     related_url = f'https://benn.substack.com/api/v1/archive?sort=new&search=&offset=0&limit=11'
-    
+
     ogs = opengraph.OpenGraph(url=substack_url)
-    
+
     if ogs.is_valid() and 'benn.substack' not in ogs.title:
 
         try:
@@ -29,14 +42,14 @@ def dynamic_page(dynamic_page):
         except:
             related = []
 
-        return render_template('post.html', 
-            title=ogs.title, 
-            image=ogs.image, 
-            description=ogs.description, 
+        return render_template('post.html',
+            title=ogs.title,
+            image=ogs.image,
+            description=ogs.description,
             substack_url=substack_url,
             related=related
         )
-        
+
     else:
         return render_template('404.html'), 404
 
